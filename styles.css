@@ -1,0 +1,202 @@
+@import url(https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&display=swap);
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: "Eczar", sans-serif;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(45deg, #ff1a66 0%, rgba(255, 26, 102, 0) 70%), linear-gradient(135deg, #0643f9 10%, rgba(6, 67, 249, 0) 80%), linear-gradient(225deg, #0df259 10%, rgba(13, 242, 89, 0) 80%), linear-gradient(315deg, #f99e1f 100%, rgba(249, 158, 31, 0) 70%);
+  background-repeat: no-repeat;
+}
+
+.container {
+  width: 60%;
+  padding-top: 3rem;
+  max-width: 840px;
+  min-width: 452px;
+  perspective: 600px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #ebb800;
+  display: block;
+  width: 100%;
+}
+
+img {
+  display: block;
+  width: 30%;
+  object-fit: cover;
+  margin: 0.5rem 0.4rem 0.5rem 0.6rem;
+  border-radius: 4px;
+}
+
+.cool {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cool > li {
+  flex-basis: 33%;
+  position: relative;
+  padding: 1rem;
+}
+.cool > li > a {
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  background-color: rgba(207, 206, 206, 0.4);
+  border-radius: 3px;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: relative;
+}
+
+.dropdownBackground {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s, opacity 0.1s, transform 0.2s;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+
+.dropdownBackground.open {
+  opacity: 1;
+}
+
+.arrow {
+  --d: 10px;
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: var(--d) solid transparent;
+  border-right: var(--d) solid transparent;
+  border-bottom: var(--d) solid white;
+}
+
+.dropdown {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 400px;
+  font-size: 13px;
+  background-color: white;
+  background-color: transparent;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  transition: all 0.3s;
+  display: none;
+  opacity: 0;
+}
+.dropdown::before {
+  --d: 10px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: var(--d) solid transparent;
+  border-right: var(--d) solid transparent;
+  border-bottom: var(--d) solid white;
+}
+
+.trigger-enter .dropdown {
+  display: block;
+}
+
+.trigger-enter-active .dropdown {
+  opacity: 1;
+}
+
+.dropdown > * {
+  display: flex;
+}
+
+.dropdown1 p {
+  width: 70%;
+  padding: 1rem 1rem 1rem 0.6rem;
+}
+
+.dropdown2 li {
+  border-bottom: 1px solid #d4d4d4;
+  padding: 2px 0;
+}
+.dropdown2 li:last-of-type {
+  border-bottom: none;
+}
+
+.dropdown2 {
+  width: 250px;
+  padding: 1rem;
+}
+.dropdown2 span {
+  font-weight: 600;
+}
+.dropdown2 a {
+  margin-left: 0.6rem;
+}
+
+.dropdown3 {
+  width: 150px;
+}
+.dropdown3 li {
+  text-align: center;
+}
+
+a.button {
+  background: black;
+  display: block;
+  padding: 10px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.button[href*=twitter] {
+  background: #019FE9;
+}
+
+.button[href*=facebook] {
+  background: #3B5998;
+}
+
+.button[href*=courses] {
+  background: #ffc600;
+}
+
+/*# sourceMappingURL=styles.css.map */

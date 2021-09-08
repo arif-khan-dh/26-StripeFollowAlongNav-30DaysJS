@@ -1,0 +1,226 @@
+@import url(https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&display=swap);
+
+html {
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Eczar', sans-serif;
+    display: flex;
+    justify-content: center;
+    background-image:
+        linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
+        linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
+        linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
+        linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 60%;
+    padding-top: 3rem;
+    max-width: 840px;
+    min-width: 452px;
+    perspective: 600px;
+}
+
+ul {
+    list-style-type: none;    
+}
+
+a {
+    text-decoration: none;
+    color: #ebb800;
+    display: block;
+    width: 100%;   
+}
+
+img {
+    display: block;
+    width: 30%;
+    object-fit: cover;
+    margin: .5rem .4rem .5rem .6rem;
+    border-radius: 4px;
+}
+
+.cool {    
+    display: flex;
+    justify-content: space-between;
+}
+
+.cool > li {
+    flex-basis: 33%;
+    position: relative;
+    padding: 1rem;
+    
+
+    & > a {
+        color: rgb(255, 255, 255);    
+        text-align: center;
+        font-weight: 600;
+        background-color: rgba($color: #cfcece, $alpha: .4);
+        border-radius: 3px; 
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+} 
+
+nav {
+    position: relative;
+    // perspective: 600px;
+}
+    
+.dropdownBackground {
+    // width: 100px;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
+    transition: all 0.3s, opacity 0.1s, transform .2s;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    display: flex;
+    justify-content: center;
+    opacity:0;
+  }
+
+  .dropdownBackground.open {
+      opacity: 1;
+  }
+
+  .arrow {
+    // position: absolute;
+    // width: 10px;
+    // height: 10px;
+    // display: block;
+    // background: white;
+    // transform: translateY(-50%) rotate(45deg);
+    --d: 10px;
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: var(--d) solid transparent;
+    border-right: var(--d) solid transparent;
+    border-bottom: var(--d) solid white;
+  }
+
+.dropdown {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 400px;
+    font-size: 13px;
+    background-color: white;
+    background-color: transparent;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba($color: #000000, $alpha: .2);
+    padding: .5rem;
+    transition: all 0.3s;
+    display: none;
+    opacity: 0;
+
+    &::before {
+        --d: 10px;
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: var(--d) solid transparent;
+        border-right: var(--d) solid transparent;
+        border-bottom: var(--d) solid white;
+    }
+}
+
+.trigger-enter .dropdown {
+    display: block;
+}
+
+.trigger-enter-active .dropdown {    
+    opacity: 1;
+}
+
+// li:hover > .dropdown {
+//     // opacity: 1;
+//     display: block;
+// }
+
+
+
+.dropdown > * {
+    display: flex;   
+}
+
+.dropdown1 {
+
+    p {
+        width: 70%;
+        padding: 1rem 1rem 1rem .6rem;
+    }
+}
+
+.dropdown2{
+    li {
+        border-bottom: 1px solid rgb(212, 212, 212);
+        padding: 2px 0;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+}
+
+.dropdown2 {
+    width: 250px;
+    padding: 1rem;
+
+    span {
+        font-weight: 600;
+    }
+
+    a {
+        margin-left: .6rem;
+    }
+    
+
+}
+
+.dropdown3 {
+    width: 150px;
+
+    li {
+        text-align: center;
+    }
+}
+
+a.button {
+    background: black;
+    display: block;
+    padding: 10px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.button[href*=twitter] { background: #019FE9; }
+.button[href*=facebook] { background: #3B5998; }
+.button[href*=courses] { background: #ffc600; }
